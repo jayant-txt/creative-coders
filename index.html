@@ -4,48 +4,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>revision for order list & unorder list items and overflow property </title>
-    <style>
-        nav ul li {
-            /* list-style: devanagari; */
-            list-style-type: "🥰";
-            background-color: aquamarine;
-            list-style-position: inside;
-            border: 2px solid black;
-            display: inline-flex;
-            padding: 12px;
-            margin: 35px;
-            font-size: 14px;
-            /* flex-direction: row; */
-
-        }
-
-        .box {
-            height: 30px;
-            width: 250px;
-            background-color: lightblue;
-            padding: 20px;
-            margin: 20px;
-            border: 1px solid black;
-            font-size: 15px;
-            /* overflow: auto; */
-            overflow: scroll;
-        }
-    </style>
+    <title>css positon</title>
 </head>
+<style>
+    * {
+        width: 830px;
+        height: 160px;
+        margin: 5px;
+        padding: 10px;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+        font-size: 20px;
+        color: white;
+        background-color: rgb(53, 52, 52);
+        
+
+    }
+
+    .box {
+        border: 1px solid black;
+        margin: 10px;
+        padding: 5px;
+
+    }
+
+    .box1 {
+        background-color: rgb(187, 23, 124);
+
+    }
+
+    .box2 {
+        background-color: rgb(100, 149, 39);
+        position: relative;
+        right: 85px;
+        top: 50px;
+        z-index: 1;
+        box-shadow: rgba(90, 230, 15, 0.985) 1px 3px 14px;
+    }
+
+    .box3 {
+        background-color: rgb(51, 126, 142);
+        position: relative;
+        right: 175px;
+        top: 100px;
+        z-index: 0
+    }
+
+    .box4 {
+        background-color: rgb(100, 89, 89);
+        position: relative;
+        right: 245px;
+        top: 150px;
+        z-index: 1;
+        box-shadow: rgba(234, 150, 14, 0.957) 1px 3px 14px;
+
+
+
+    }
+
+    div {
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        /* position: relative; */
+
+    }
+</style>
 
 <body>
-    <nav>
-        <ul>
-            <li>Home</li>
-            <li>About</li>
-            <li>Contect</li>
-        </ul>
-    </nav>
-    <div class="box">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, voluptate! Rem officiis ratione minima
-        excepturi quasi temporibus sint. Pariatur, ex qui. Quia, dignissimos dolorem id nemo eos aspernatur iure!
-        Excepturi minus voluptatem itaque. Ducimus, id.lorem
+    <div>
+        <div class="box box1">THIS</div>
+        <div class="box box2">IS</div>
+        <div class="box box3">MY</div>
+        <div class="box box4">VSCODE</div>
+
     </div>
 </body>
 
