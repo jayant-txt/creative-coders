@@ -4,83 +4,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>css positon</title>
+    <title>CSS Variable</title>
 </head>
 <style>
     * {
-        width: 830px;
-        height: 160px;
-        margin: 5px;
-        padding: 10px;
-        box-sizing: border-box;
-        font-family: Arial, sans-serif;
-        font-size: 20px;
-        color: white;
-        background-color: rgb(53, 52, 52);
-        
-
-    }
-
-    .box {
-        border: 1px solid black;
-        margin: 10px;
+        margin: 0;
         padding: 5px;
-
+        box-sizing: border-box;
     }
 
-    .box1 {
-        background-color: rgb(187, 23, 124);
-
-    }
-
-    .box2 {
-        background-color: rgb(100, 149, 39);
-        position: relative;
-        right: 85px;
-        top: 50px;
-        z-index: 1;
-        box-shadow: rgba(90, 230, 15, 0.985) 1px 3px 14px;
-    }
-
-    .box3 {
-        background-color: rgb(51, 126, 142);
-        position: relative;
-        right: 175px;
-        top: 100px;
-        z-index: 0
-    }
-
-    .box4 {
-        background-color: rgb(100, 89, 89);
-        position: relative;
-        right: 245px;
-        top: 150px;
-        z-index: 1;
-        box-shadow: rgba(234, 150, 14, 0.957) 1px 3px 14px;
-
-
-
-    }
-
-    div {
-
+    ul {
         display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: row;
-        /* position: relative; */
+        list-style: none;
+        justify-content: space-around;
+        background-color: hsl(180, 89%, 85%);
+        font-size: 25px;
+        font-weight: bold;
+        padding: 10px;
+        color: hsl(88, 24%, 51%);
+        text-decoration: unset;
+        border-radius: 25px;
+        opacity: 0.9;
+        transition: background-color 0.3s ease;
 
     }
+
+    .ul li {
+        background-color: hsl(180, 1%, 64%);
+        padding: var(--defpad);
+        opacity: 0.5;
+        transition: background-color 0.3s ease;
+    }
+
+    .content {
+        background-color: var(--bg-color, #7ccbf2);
+        color: var(--text-color, hsl(200, 100%, 30%));
+        padding: 15px;
+        font-family: Arial, sans-serif;
+        font-size: 1.2rem;
+        border-radius: 5cqmax 0 5px 0;
+        margin: 5px;
+        opacity: 0.7;
+    }
+
+    /* .content { */
+    background-color: hsl(200, 100%, 90%);
+    color: hsl(200, 100%, 30%);
+    }
+
+    :root {
+        --bg-color: #7ccbf2;
+        --text-color: hsl(200, 100%, 30%);
+        --defpad: 15px;
+    }
+
+    ul :hover {
+        background-color: hsl(180, 1%, 64%);
+        opacity: 0.9;
+    }
+
+    .nav {
+        background-color: hsl(88, 24%, 51%);
+        padding: 10px;
+        border-radius: 25px;
+        margin: 5px;
+    }
+  
 </style>
 
 <body>
-    <div>
-        <div class="box box1">THIS</div>
-        <div class="box box2">IS</div>
-        <div class="box box3">MY</div>
-        <div class="box box4">VSCODE</div>
+    <div class="nav">
+        <ul>
+            <li>Home</li>
+            <li>About</li>
+            <li>Contect</li>
+        </ul>
 
     </div>
+    <div class="content">
+        <h1>CSS Variable Example</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate expedita nobis eaque, temporibus quos
+            recusandae eligendi voluptatem magni. Veritatis minima nulla perferendis incidunt. Perferendis dignissimos
+            saepe culpa omnis corporis eius dolorum hic? Quibusdam omnis autem, commodi magnam inventore, non fugiat
+            laborum voluptates, consequuntur saepe quod.</p>
+        <h2>
+            <p>This is an example of using CSS variables.</p>
+        </h2>
+
+    </div>
+
+
 </body>
 
 </html>
