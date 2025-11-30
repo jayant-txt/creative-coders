@@ -1,123 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Sigma Web Development Course - Tutorial #38:-css,flexbox,container,items,order </title>
-    <style>
-        .container {
-            height: 20px;
-            width: 80%;
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            align-items: center;
-            flex-wrap: wrap;
-            /* background-color: #6bbdfff0;
-        border: 2px solid #7b8185fc;
-        padding: 10px;
-        box-sizing: border-box;
-        margin: 0 auto; */
-            gap: 5px 10px;
-        }
-
-        .item {
-            flex-grow: 2;
-            height: 20px;
-            width: 25px;
-            background-color: #fade62;
-            margin: 2px;
-            border: 1px solid #f52929;
-            flex-wrap: wrap;
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            align-items: center;
-
-
-        }
-        .item1{
-            flex-grow:3;
-        }
-         
-
-        .item:hover {
-            background-color: #55db46;
-            transform: scale(1.3);
-            cursor: pointer;
-            transition: background 0.2s, transform 0.2s;
-        }
-
-        .order-1 {
-            order: 1;
-            background-color: #22b3ec;
-            border-color: #f610e2;
-            border: 2px solid #f610e2;
-        }
-
-        .order-2 {
-            order: 2;
-            background-color: rgb(133, 119, 239);
-            border-color: #f610e2;
-            border: 2px solid #f610e2;
-        }
-
-        .order-3 {
-            order: 3;
-            background-color: rgb(234, 145, 36);
-            border-color: #f610e2;
-            border: 2px solid #f610e2;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Christmas Tree Animation</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-    <main>
-        <div class="container" with flexbox properties>
-            <div class="item">1</div>
-            <div class="item">2</div>
-            <div class="item">3</div>
-            <div class="item order-1">4</div>
-            <div class="item">5</div>
-            <div class="item">6</div>
-            <div class="item">7</div>
-            <div class="item order-3">8</div>
-            <div class="item">9</div>
-            <div class="item">10</div>
-            <div class="item">11</div>
-            <div class="item order-2">12</div>
-            <div class="item">13</div>
-            <div class="item">14</div>
-            <!-- <div class="item">15</div>
-            <div class="item">16</div>
-            <div class="item">17</div>
-            <div class="item">18</div>
-            <div class="item">19</div>
-            <div class="item">20</div>
-            <div class="item">21</div>
-            <div class="item">22</div>
-            <div class="item">23</div>
-            <div class="item">24</div>
-            <div class="item">25</div>
-            <div class="item">26</div>
-            <div class="item">27</div>
-            <div class="item">28</div>
-            <div class="item">29</div>
-            <div class="item">30</div>
-            <div class="item">31</div>
-            <div class="item">32</div>
-            <div class="item">33</div>
-            <div class="item">34</div>
-            <div class="item">35</div>
-            <div class="item">36</div>
-            <div class="item">37</div>
-            <div class="item">38</div>
-            <div class="item">39</div>
-            <div class="item">40</div> -->
-
-        </div>
-    </main>
+  <div class="container">
+    <div class="tree">
+      <div class="star"></div>
+      <div class="tree__light" style="--i: 1;"></div>
+      <div class="tree__light" style="--i: 2;"></div>
+      <div class="tree__light" style="--i: 3;"></div>
+      <div class="tree__light" style="--i: 4;"></div>
+      <div class="tree__light" style="--i: 5;"></div>
+      <div class="tree__light" style="--i: 6;"></div>
+      <div class="tree__light" style="--i: 7;"></div>
+      <div class="tree__light" style="--i: 8;"></div>
+      <div class="tree__light" style="--i: 9;"></div>
+      <div class="tree__light" style="--i: 10;"></div>
+      <div class="tree__light" style="--i: 11;"></div>
+      <div class="tree__light" style="--i: 12;"></div>
+      <div class="tree__light" style="--i: 13;"></div>
+      <div class="tree__light" style="--i: 14;"></div>
+      <div class="tree__light" style="--i: 15;"></div>
+      <div class="tree__light" style="--i: 16;"></div>
+      <div class="tree__light" style="--i: 17;"></div>
+      <div class="tree__light" style="--i: 18;"></div>
+      <div class="tree__light" style="--i: 19;"></div>
+      <div class="tree__light" style="--i: 20;"></div>
+      <div class="tree__light" style="--i: 21;"></div>
+      <div class="tree__light" style="--i: 22;"></div>
+      <div class="tree__light" style="--i: 23;"></div>
+      <div class="tree__light" style="--i: 24;"></div>
+      <div class="tree__light" style="--i: 25;"></div>
+      <div class="tree__light" style="--i: 26;"></div>
+      <div class="tree__light" style="--i: 27;"></div>
+      <div class="tree__light" style="--i: 28;"></div>
+      <div class="tree__light" style="--i: 29;"></div>
+      <div class="tree__light" style="--i: 30;"></div>
+      <div class="tree__light" style="--i: 31;"></div>
+      <div class="tree__light" style="--i: 32;"></div>
+      <div class="tree__light" style="--i: 33;"></div>
+      <div class="tree__light" style="--i: 34;"></div>
+      <div class="tree__light" style="--i: 35;"></div>
+      <div class="tree__light" style="--i: 36;"></div>
+      <div class="tree__light" style="--i: 37;"></div>
+      <div class="tree__light" style="--i: 38;"></div>
+      <div class="tree__light" style="--i: 39;"></div>
+      <div class="tree__light" style="--i: 40;"></div>
+    </div>
+  </div>
 </body>
-
 </html>
