@@ -6,13 +6,25 @@ box-sizing: border-box;
 font-family: 'Roboto', sans-serif;
 }
 body{
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    background: linear-gradient(135deg, #667eea 0%, #7848a8 100%);
+    background: radial-gradient(circle at top left, rgba(255,255,255,0.2), transparent 30%),
+                radial-gradient(circle at bottom right, rgba(168,85,247,0.35), transparent 35%),
+                linear-gradient(135deg, #667eea 0%, #7848a8 100%);
     background-size: cover;
-    background-position: center; 
+    background-position: center;
+    overflow: hidden;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.12);
+    z-index: 0;
 }
 .img1{
     position: absolute;
@@ -38,103 +50,148 @@ body{
     -webkit-mask-image: linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.5) 15%, rgba(0,0,0,1) 100%);
     filter: blur(1px);
 }
-.werapper{
-    width: 350px;
-    background: #c1b7b7;
-    padding: 30px;
-    border-radius: 2px;
-    box-shadow: 0 5px 15px rgba(160, 33, 33, 0.3);
+.wrapper{
+    position: relative;
+    z-index: 10;
+    width: 420px;
+    max-width: calc(100% - 32px);
+    padding: 32px 28px 28px;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    border-radius: 24px;
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    box-shadow: 0 20px 50px rgba(15, 23, 42, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+    animation: cardFloat 6s ease-in-out infinite;
 }
-.werapper h1{
+
+form {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+}
+.wrapper h1{
     text-align: center;
-    margin-bottom: 15px;
-    color: #9d2020;
+    margin-bottom: 24px;
+    color: #ffffff;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
 }
-.werapper  .input-box{
+.wrapper  .input-box{
     width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 2px;
+    margin-bottom: 18px;
     position: relative;
 }
 .input-box input{
     width: 100%;
-    padding: 20px;
-    border: none;
+    padding: 16px 48px 16px 18px;
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.08);
     outline: none;
-    background: transparent;
-    border: none;
-    outline: none;
-    border: 2px solid #111211;
-    border-radius: 30px;
-    transition: 0.3s;
+    transition: 0.3s ease;
     font-size: 16px;
-    color: #d63c3c;
-    font-weight: 800;
-    padding: 20px 45px 20px 20px;
+    color: #ffffff;
+    font-weight: 600;
+    letter-spacing: 0.02em;
 }
 .input-box input::placeholder{
-    border-color: #dca933;
-    color: #514e50;
-
-}.input-box i {
+    color: rgba(255, 255, 255, 0.7);
+}
+.input-box input:focus{
+    border-color: rgba(255, 255, 255, 0.85);
+    box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.12);
+    background: rgba(255, 255, 255, 0.12);
+    transform: translateY(-1px);
+}
+.input-box i {
     position: absolute;
-    right: 20px;
+    right: 18px;
     top: 50%;
     transform: translateY(-50%);
-    color: #667eea;
+    color: rgba(255, 255, 255, 0.8);
     font-size: 20px;
 }
-.werapper .remember-forgot{
+.wrapper .remember-forgot{
     display: flex;
     justify-content: space-between;
+    align-items: center;
     font-size: 14px;
-    margin: -15px 0 15px;
+    margin: 4px 0 22px;
+    color: rgba(255, 255, 255, 0.85);
 }
-  .remember-forgot label input {
+.remember-forgot label {
     display: flex;
     align-items: center;
-    color: #333;
-    accent-color: #fff;
-    margin: 3px ;
-  }
-.werapper .remember-forgot a{
-    color: #667eea;
-    text-decoration: none;
+    gap: 8px;
+    cursor: pointer;
 }
-.werapper .remember-forgot a:hover{ 
+.remember-forgot label input {
+    accent-color: #c084fc;
+    width: 14px;
+    height: 14px;
+}
+.wrapper .remember-forgot a{
+    color: #e9d5ff;
+    text-decoration: none;
+    transition: 0.2s ease;
+}
+.wrapper .remember-forgot a:hover{ 
     text-decoration: underline;
 }
-.werapper .btn{
+.wrapper .btn{
     width: 100%;
-    padding: 10px;
+    padding: 14px 16px;
     border: none;
-    border-radius: 5px;
-    background: #667eea;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #8b5cf6 0%, #6366f1 100%);
     color: #fff;
     font-size: 16px;
+    font-weight: 700;
     cursor: pointer;
-    transition: 0.3s;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+    box-shadow: 0 10px 22px rgba(99, 102, 241, 0.35);
 }
-.werapper .btn:hover{
-    background: #764ba2;
-}   
-.werapper .register-link{
+.wrapper .btn:hover{
+    transform: translateY(-1px);
+    box-shadow: 0 14px 28px rgba(99, 102, 241, 0.45);
+    filter: brightness(1.05);
+}
+.wrapper .btn:active{
+    transform: translateY(0);
+}
+.wrapper .register-link{
     text-align: center;
-    margin-top: 15px;
+    margin-top: 20px;
     font-size: 14px;
-    margin :20px 0 15px;
-
+    color: rgba(255, 255, 255, 0.85);
 }
-.werapper .register-link p a{
-    color: #667eea;
+.wrapper .register-link p a{
+    color: #f5d0fe;
     text-decoration: none;
-    font-weight: 500;
-
+    font-weight: 600;
 }
-.werapper .register-link p a:hover{
+.wrapper .register-link p a:hover{
     text-decoration: underline;
+}
+
+@media (max-width: 480px) {
+    .wrapper {
+        padding: 26px 20px 22px;
+        border-radius: 18px;
+    }
+
+    .wrapper h1 {
+        font-size: 1.7rem;
+    }
+
+    .wrapper .remember-forgot {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
 }
 
 /* Floating Particles Animation */
@@ -160,6 +217,11 @@ body{
     50% { transform: translateY(-90px) translateX(-60px); opacity: 0.6; }
     75% { transform: translateY(-45px) translateX(45px); opacity: 0.7; }
     100% { transform: translateY(0px) translateX(0px); opacity: 0.6; }
+}
+
+@keyframes cardFloat {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-8px); }
 }
 
 .particles {
